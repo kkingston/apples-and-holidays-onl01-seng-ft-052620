@@ -25,10 +25,10 @@ def add_supply_to_winter_holidays(holiday_hash, supply)
 
 holiday_hash.each do |season, holiday|
   if season == :winter
-  holiday.each do |day, value|
-    holiday_hash[:winter][:christmas][2] = supply if day == :christmas
-    holiday_hash[:winter][:new_years][1] = supply if day == :new_years
-  end
+    holiday.each do |day, value|
+      holiday_hash[:winter][:christmas][2] = supply if day == :christmas
+      holiday_hash[:winter][:new_years][1] = supply if day == :new_years
+    end
   end
 end
 
@@ -48,11 +48,11 @@ holiday_hash[season][holiday_name] = supply_array
 end
 
 def all_winter_holiday_supplies(holiday_hash)
-holiday_hash.keys.each do |season, next_key|
-if season == :winter
-return holiday_hash[season].values.flatten
-end
-end
+  holiday_hash.keys.each do |season, next_key|
+    if season == :winter
+    return holiday_hash[season].values.flatten
+    end
+  end
 end
 
 def all_supplies_in_holidays(holiday_hash)
@@ -107,11 +107,11 @@ def all_holidays_with_bbq(holiday_hash)
   # include the string "BBQ"
   answers = []
 holiday_hash.each do |season, holiday|
-  holiday.each do |day, value_array|
-    value_array.each do |value|
-      answers << day if value == "BBQ"
+    holiday.each do |day, value_array|
+      value_array.each do |value|
+        answers << day if value == "BBQ"
+      end
     end
-  end
   end
   return answers
 end
